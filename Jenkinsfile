@@ -1,7 +1,3 @@
-import hudson.plugins.git.GitSCM
-
-gitConfig = 
-
 pipelineJob('Hello-Jenkins') {
     definition {
         cpsScm {
