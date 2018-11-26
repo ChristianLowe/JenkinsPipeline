@@ -1,15 +1,15 @@
 import hudson.plugins.git.GitSCM
 
-gitConfig = { GitSCM node ->
-    node / gitConfigName('Jenkins')
-    node / gitConfigEmail('jenkins@example.com')
-}
+gitConfig = 
 
 pipelineJob('Hello-Jenkins') {
     definition {
         cpsScm {
             scm {
-                git('https://github.com/ChristianLowe/HelloJenkins.git', gitConfig)
+                git('https://github.com/ChristianLowe/HelloJenkins.git') { node ->
+                    node / gitConfigName('Jenkins')
+                    node / gitConfigEmail('jenkins@example.com')
+                }
             }
         }
     }
