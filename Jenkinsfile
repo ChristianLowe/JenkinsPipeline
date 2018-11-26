@@ -1,7 +1,9 @@
 pipelineJob('Hello-Jenkins') {
     definition {
         cpsScm {
-            git('https://github.com/ChristianLowe/HelloJenkins.git')
+            scm {
+                git('https://github.com/ChristianLowe/HelloJenkins.git')
+            }
         }
     }
 }
