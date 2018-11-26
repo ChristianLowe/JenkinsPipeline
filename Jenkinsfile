@@ -1,4 +1,6 @@
-gitConfig = { hudson.plugins.git.GitSCM node ->
+import hudson.plugins.git.GitSCM
+
+gitConfig = { GitSCM node ->
     node / gitConfigName('Jenkins')
     node / gitConfigEmail('jenkins@example.com')
 }
